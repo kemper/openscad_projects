@@ -2,7 +2,7 @@
 num_points = 5;       // Number of points of the star
 star_size = 10;       // Size of the outer star (distance from center to outer point)
 star_thickness = 3;   // Thickness of the star wall
-star_height = 3;      // Height of each star layer
+star_height = 1;      // Height of each star layer
 num_layers = 3;       // Number of stacked layers of hollow stars
 grid_width = 10;      // Number of stars in the x direction
 grid_height = 10;     // Number of stars in the y direction
