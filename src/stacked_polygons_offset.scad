@@ -3,7 +3,8 @@ num_sides = 6;          // Number of sides of the polygon (e.g., 6 for hexagon, 
 poly_size = 10;         // Size of the outer polygon (side length)
 grid_width = 10;        // Number of polygons in the x direction
 grid_height = 10;       // Number of polygons in the y direction
-spacing = 20    ;           // Space between polygons
+x_spacing = 20;           // Space between polygons
+y_spacing = 18;
 wall_thickness = 3;     // Thickness of the polygon wall
 num_layers = 3;         // Number of stacked layers of hollow polygons
 
@@ -28,8 +29,8 @@ function regular_polygon_points(size, sides) =
 // Loop to create the grid of polygons
 for (i = [0 : grid_width - 1]) {
   for (j = [0 : grid_height - 1]) {
-    x_offset = i * spacing + (j % 2) * (spacing / 2); // Offset every other row by 50% of the spacing
-    y_offset = j * spacing;
+    x_offset = i * x_spacing + (j % 2) * (x_spacing / 2); // Offset every other row by 50% of the spacing
+    y_offset = j * y_spacing;
 
     rotation_angle = 180 / num_sides;
 
