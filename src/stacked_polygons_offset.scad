@@ -6,7 +6,7 @@ grid_height = 10;       // Number of polygons in the y direction
 x_spacing = 20;           // Space between polygons
 y_spacing = 18;
 wall_thickness = 3;     // Thickness of the polygon wall
-num_layers = 3;         // Number of stacked layers of hollow polygons
+num_layers = 4;         // Number of stacked layers of hollow polygons
 
 // Function to create a single hollow polygon with arbitrary sides
 module hollow_polygon(sides, size, wall, height) { // Added height parameter
