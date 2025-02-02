@@ -1,3 +1,7 @@
+help:
+	@echo "build - generate stl files from scad files in the src directory"
+	@echo "build_one - generate a stl file from a single scad file"
+
 # Using a make command called build, loop over all scad files in the src directory and generate stl files in the dist directory but using the same filename
 build:
 	@for file in src/*.scad; do \
