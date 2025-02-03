@@ -4,7 +4,7 @@ poly_size = 10;         // Size of the outer polygon (side length)
 grid_width = 10;        // Number of polygons in the x direction
 grid_height = 10;       // Number of polygons in the y direction
 x_spacing = 20;           // Space between polygons
-y_spacing = 17;
+y_spacing = 17.5;
 wall_thickness = 3;     // Thickness of the polygon wall
 num_layers = 4;         // Number of stacked layers of hollow polygons
 
