@@ -1,7 +1,9 @@
 ## Openscad projects
 
 ```bash
-brew install openscad
+brew install --cask openscad@snapshot
+brew install f3d uv
+uv venv && uv pip install lib3mf
 
 # build all .scad files across all subdirectories
 make build
@@ -12,7 +14,11 @@ make build dir=shelf
 # build a single file
 make build_one file=src/shelf/shelf.scad
 
-# generate a png preview for visual verification
+# generate png previews for all files (or one subdirectory)
+make previews
+make previews dir=shelf
+
+# generate a single png preview for quick verification
 make preview file=src/shelf/shelf.scad
 ```
 

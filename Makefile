@@ -1,3 +1,8 @@
+OPENSCAD := openscad
+F3D := f3d
+F3D_FLAGS := --resolution=1024,768 --no-background --up=+Z --filename=false --grid=false --axis=false -q
+PYTHON := .venv/bin/python
+
 help:
 	@echo "build           - build all .scad files to .stl (mirrors src/ structure into dist/)"
 	@echo "build dir=X     - build all .scad files in src/X/"
@@ -26,24 +31,28 @@ build: $(STL_FILES)
 dist/%.stl: src/%.scad
 	@mkdir -p $(dir $@)
 	@echo "Building $<"
-	@openscad -o $@ $<
+	@$(OPENSCAD) -o $@ $<
 
 # Build a single file (usage: make build_one file=src/shelf/shelf.scad)
 build_one:
 	@mkdir -p $(dir $(patsubst src/%.scad,dist/%.stl,$(file)))
 	@echo "Building $(file)"
-	@openscad -o $(patsubst src/%.scad,dist/%.stl,$(file)) $(file)
+	@$(OPENSCAD) -o $(patsubst src/%.scad,dist/%.stl,$(file)) $(file)
 
 previews: $(PREVIEW_FILES)
 
-# Pattern rule: mirrors src/ directory structure into previews/
+# Two-stage preview: OpenSCAD renders STL, F3D produces a clean PNG
 previews/%.png: src/%.scad
 	@mkdir -p $(dir $@)
 	@echo "Rendering preview of $<"
-	@openscad -o $@ --imgsize=1024,768 --viewall --autocenter --projection=p $<
+	@$(OPENSCAD) -o $(basename $@).stl $<
+	@$(F3D) $(basename $@).stl --output=$@ $(F3D_FLAGS)
+	@rm -f $(basename $@).stl
 
 # Generate a single png preview to tmp/ for quick visual verification
 # (usage: make preview file=src/shelf/shelf.scad)
 preview:
 	@echo "Rendering preview of $(file)"
-	@openscad -o tmp/preview.png --imgsize=1024,768 --viewall --autocenter --projection=p $(file)
+	@$(OPENSCAD) -o tmp/preview.stl $(file)
+	@$(F3D) tmp/preview.stl --output=tmp/preview.png $(F3D_FLAGS)
+	@rm -f tmp/preview.stl
