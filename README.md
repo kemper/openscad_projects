@@ -2,9 +2,18 @@
 
 ```bash
 brew install openscad
+
+# build all .scad files across all subdirectories
 make build
-# or make one
-make build_one file=src/stacked_polygons_offset.scad
+
+# build only one subdirectory
+make build dir=shelf
+
+# build a single file
+make build_one file=src/shelf/shelf.scad
+
+# generate a png preview for visual verification
+make preview file=src/shelf/shelf.scad
 ```
 
 You will have to fiddle with apple settings until it allows you to run openscad as an app.
