@@ -1,24 +1,37 @@
 help:
-	@echo "build - generate stl files from scad files in the src directory"
-	@echo "build_one - generate a stl file from a single scad file"
-	@echo "preview - generate a png preview of a scad file (usage: make preview file=src/shelf.scad)"
+	@echo "build         - build all .scad files to .stl (mirrors src/ structure into dist/)"
+	@echo "build dir=X   - build all .scad files in src/X/"
+	@echo "build_one     - build a single .scad file (usage: make build_one file=src/shelf/shelf.scad)"
+	@echo "preview       - generate a png preview (usage: make preview file=src/shelf/shelf.scad)"
+	@echo ""
+	@echo "Subdirectories:"
+	@ls -d src/*/ 2>/dev/null | sed 's|src/||;s|/||'
 
-STL_FILES := $(patsubst src/%.scad,dist/%.stl,$(wildcard src/*.scad))
+# Find all .scad files recursively under src/
+SCAD_FILES := $(shell find src -name '*.scad')
+STL_FILES := $(patsubst src/%.scad,dist/%.stl,$(SCAD_FILES))
+
+# Filter to a specific subdirectory if dir= is set
+ifdef dir
+STL_FILES := $(filter dist/$(dir)/%,$(STL_FILES))
+endif
 
 build: $(STL_FILES)
 
+# Pattern rule: mirrors src/ directory structure into dist/
 dist/%.stl: src/%.scad
+	@mkdir -p $(dir $@)
 	@echo "Building $<"
 	@openscad -o $@ $<
 
-# take a path to a scad file and generate a stl file in the dist directory
-# example use: make build_one file=src/box.scad
+# Build a single file (usage: make build_one file=src/shelf/shelf.scad)
 build_one:
+	@mkdir -p $(dir $(patsubst src/%.scad,dist/%.stl,$(file)))
 	@echo "Building $(file)"
-	@openscad -o dist/$$(basename $(file) .scad).stl $(file)
+	@openscad -o $(patsubst src/%.scad,dist/%.stl,$(file)) $(file)
 
-# generate a png preview for visual verification
-# example use: make preview file=src/shelf.scad
+# Generate a png preview for visual verification
+# (usage: make preview file=src/shelf/shelf.scad)
 preview:
 	@echo "Rendering preview of $(file)"
 	@openscad -o tmp/preview.png --imgsize=1024,768 --viewall --autocenter --projection=p $(file)
