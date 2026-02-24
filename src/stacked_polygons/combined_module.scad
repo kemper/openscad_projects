@@ -79,7 +79,7 @@ module stacked_grid(
 // Example usage:
 // stacked_grid(shape_type = "star", num_points = 5, size = 10, thickness = 3, height = 1, num_layers = 3, grid_width = 5, grid_height = 5, x_spacing = 25, y_spacing = 30, offset = true);
 
-stacked_grid(shape_type = "polygon", num_sides = 6, size = 10, thickness = 4, height = 1, num_layers = 4, grid_width = 30, grid_height = 30, x_spacing = 19.5, y_spacing = 17, offset = true, rotation_angle = 30);
+stacked_grid(shape_type = "polygon", num_sides = 6, size = 10, thickness = 4, height = 1, num_layers = 4, grid_width = 15, grid_height = 15, x_spacing = 19.5, y_spacing = 17, offset = true, rotation_angle = 30);
 
 
 /*
