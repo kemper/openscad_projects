@@ -4,48 +4,48 @@ Visual previews of all shelf designs. Source files are in [`src/shelf/`](../src/
 
 ## Shelf
 
-![shelf](../tmp/shelf/shelf.png)
+![shelf](../previews/shelf/shelf.png)
 
 ## Shelf Connector
 
-![shelf_connector](../tmp/shelf/shelf_connector.png)
+![shelf_connector](../previews/shelf/shelf_connector.png)
 
 ## Shelf Faceted
 
-![shelf_faceted](../tmp/shelf/shelf_faceted.png)
+![shelf_faceted](../previews/shelf/shelf_faceted.png)
 
 ## Shelf Fluted
 
-![shelf_fluted](../tmp/shelf/shelf_fluted.png)
+![shelf_fluted](../previews/shelf/shelf_fluted.png)
 
 ## Shelf Geometric
 
-![shelf_geometric](../tmp/shelf/shelf_geometric.png)
+![shelf_geometric](../previews/shelf/shelf_geometric.png)
 
 ## Shelf Perforated
 
-![shelf_perforated](../tmp/shelf/shelf_perforated.png)
+![shelf_perforated](../previews/shelf/shelf_perforated.png)
 
 ## Shelf Ribbed
 
-![shelf_ribbed](../tmp/shelf/shelf_ribbed.png)
+![shelf_ribbed](../previews/shelf/shelf_ribbed.png)
 
 ## Shelf Spiral
 
-![shelf_spiral](../tmp/shelf/shelf_spiral.png)
+![shelf_spiral](../previews/shelf/shelf_spiral.png)
 
 ## Shelf Terraced
 
-![shelf_terraced](../tmp/shelf/shelf_terraced.png)
+![shelf_terraced](../previews/shelf/shelf_terraced.png)
 
 ## Shelf Wave
 
-![shelf_wave](../tmp/shelf/shelf_wave.png)
+![shelf_wave](../previews/shelf/shelf_wave.png)
 
 ## Shelf Wave Channels
 
-![shelf_wave_channels](../tmp/shelf/shelf_wave_channels.png)
+![shelf_wave_channels](../previews/shelf/shelf_wave_channels.png)
 
 ## Shelf Woven
 
-![shelf_woven](../tmp/shelf/shelf_woven.png)
+![shelf_woven](../previews/shelf/shelf_woven.png)
