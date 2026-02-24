@@ -14,7 +14,7 @@ shelf_depth      = 120;  // depth of the shelf (to derive track length)
 dovetail_angle   = 25;   // degrees from vertical (must match shelf.scad)
 
 // --- FDM Tolerances ---
-clearance = 0.15;  // clearance per side for FDM fit
+clearance = 0.05;  // clearance per side for FDM fit
 
 // --- Derived Dimensions ---
 track_length    = shelf_depth * track_length_pct / 100;
