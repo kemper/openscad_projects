@@ -10,7 +10,7 @@
 track_width      = 10;   // width of groove at wall surface
 track_depth      = 2;    // depth of groove in the shelf
 track_length_pct = 75;   // percentage of shelf depth covered by groove
-shelf_depth      = 120;  // depth of the shelf (to derive track length)
+shelf_depth      = 90;   // depth of the shelf (to derive track length)
 dovetail_angle   = 25;   // degrees from vertical (must match shelf.scad)
 
 // --- FDM Tolerances ---

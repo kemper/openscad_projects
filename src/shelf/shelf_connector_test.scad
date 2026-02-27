@@ -12,7 +12,7 @@ dovetail_angle = 25;
 wall           = 4;
 
 // --- FDM Tolerances (must match shelf_connector.scad) ---
-clearance = 0.15;
+clearance = 0.10;
 
 // --- Test Piece Size ---
 test_length = 30;  // sliding direction — enough to check fit

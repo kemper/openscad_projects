@@ -4,8 +4,10 @@
 // Units: millimeters
 
 // --- Shelf Parameters ---
-width  = 175;  // left to right
-height = 175;  // top to bottom
+//width  = 175;  // left to right
+//height = 175;  // top to bottom
+width  = 87.5;  // left to right
+height = 87.5;  // top to bottom
 depth  = 90;  // front to back (the open axis)
 wall   = 4;    // wall thickness
 radius = 20;   // corner rounding radius (same for inner and outer edges)
