@@ -61,8 +61,10 @@ To create a multi-color model for Bambu Studio:
    ready for Bambu Studio to map to filament slots.
 
 The `make 3mf` target automatically converts the output through `scripts/bambu_3mf.py`,
-which restructures the standard 3MF into Bambu Studio's native format (split objects,
-`model_settings.config`, thumbnails via F3D). This avoids the "geometry data only" warning.
+which restructures the standard 3MF with Bambu's `model_settings.config` for proper
+multi-color extruder assignments and thumbnails via F3D. On first open, Bambu Studio
+shows a dismissible "not from Bambu Lab" dialog with a "don't show again" checkbox;
+after that, files load silently with all color/extruder assignments preserved.
 
 The converter can also be used standalone:
 ```bash
